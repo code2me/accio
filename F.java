@@ -36,7 +36,7 @@ public class F {
         for (i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
-        insertionSort1(n, arr);
         sc.close();
+        insertionSort1(n, arr);
     }
 }

@@ -22,5 +22,7 @@ public class D {
         int n = sc.nextInt();
 
         System.out.println(gcdOfFactorial(m, n));
+
+        sc.close();
     }
 }

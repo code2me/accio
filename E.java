@@ -32,7 +32,7 @@ public class E {
         for (i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
-        countSwaps(arr);
         sc.close();
+        countSwaps(arr);
     }
 }

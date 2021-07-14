@@ -30,7 +30,7 @@ public class G {
         for (i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
-        insertionSort2(arr);
         sc.close();
+        insertionSort2(arr);
     }
 }
