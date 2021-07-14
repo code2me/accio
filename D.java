@@ -1,3 +1,4 @@
+//http://codeforces.com/problemset/problem/822/A
 import java.util.*;
 
 public class D {
