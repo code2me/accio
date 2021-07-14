@@ -1,3 +1,4 @@
+//https://www.spoj.com/problems/HRECURS/
 import java.util.*;
 
 public class C {
