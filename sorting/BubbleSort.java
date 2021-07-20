@@ -4,22 +4,20 @@ import java.util.Scanner;
 
 public class BubbleSort {
 
-    public static void BSort(int arr[], int n) {
+    public static void bubbleSort(int arr[], int n) {
         int i, j, temp;
         boolean flag;
-        for (i = 1; i < n; i++) {
-            flag = false;
-            for (j = 0; j < n-i-1; j++) {
+        for (i = 1; i < n; i++) {           //iterate to n-1 (if n-1 elements is sorted n elements are sorted)
+            flag = true;                        
+            for (j = 0; j < n-i; j++) {     //iterate to n-i-1 elements (swaps and compare 0 to n-i-1 elements(arr[j]>arr[j+1]))
                 if (arr[j] > arr[j+1]) {
                     temp = arr[j];
                     arr[j] = arr[j+1];
                     arr[j+1] = temp;
-                    flag = true;
-                }
-                if(flag) {
-                    break;
+                    flag = false;
                 }
             }
+            if(flag) break;                // if array is already sorted no swaps will takes place, since "break".
         }
         print(arr, n);
     }
@@ -38,7 +36,6 @@ public class BubbleSort {
             arr[i] = sc.nextInt();
         }
         sc.close();
-
-        BSort(arr, n);
+        bubbleSort(arr, n);
     }
 }

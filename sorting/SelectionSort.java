@@ -3,11 +3,11 @@ import java.util.Scanner;
 
 public class SelectionSort {
 
-    public static void SelectSort(int arr[], int n) {
+    public static void selectionSort(int arr[], int n) {
         int i, j, min, temp;
-        for (i = 0; i < n-1; i++) {
+        for (i = 0; i < n-1; i++) { //sorted half
             min = i;
-            for (j = i+1; j < n; j++) {
+            for (j = i+1; j < n; j++) { //check min in unsorted half, if ele in unsorted half is min make it new min
                 if(arr[j] < arr[min]) {
                     min = j;
                 }
@@ -34,6 +34,6 @@ public class SelectionSort {
         }
         sc.close();
 
-        SelectSort(arr, n);
+        selectionSort(arr, n);
     }
 }
