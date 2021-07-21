@@ -1,4 +1,4 @@
-package accio;
+package accio.week1;
 // https://www.hackerrank.com/challenges/runningtime/problem
 import java.util.Scanner;
 

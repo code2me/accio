@@ -1,4 +1,4 @@
-package accio;
+package accio.week1;
 import java.io.*;
 import java.util.*;
 import java.util.stream.*;

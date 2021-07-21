@@ -1,4 +1,4 @@
-package accio;
+package accio.week1;
 // https://www.hackerrank.com/contests/aug13/challenges/mark-and-toys
 import java.util.*;
 

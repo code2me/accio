@@ -1,4 +1,4 @@
-package accio;
+package accio.week1;
 // https://open.kattis.com/problems/lineup
 import java.util.*;
 

@@ -1,4 +1,4 @@
-package accio;
+package accio.week1;
 //http://codeforces.com/problemset/problem/822/A
 import java.util.*;
 

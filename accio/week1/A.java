@@ -1,4 +1,4 @@
-package accio;
+package accio.week1;
 //https://www.hackerrank.com/challenges/ctci-fibonacci-numbers/problem
 import java.util.*;
 

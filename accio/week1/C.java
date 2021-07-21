@@ -1,4 +1,4 @@
-package accio;
+package accio.week1;
 //https://www.spoj.com/problems/HRECURS/
 import java.util.*;
 

@@ -1,4 +1,4 @@
-package accio;
+package accio.week1;
 //https://www.hackerrank.com/challenges/insertionsort1/problem
 import java.util.*;
 

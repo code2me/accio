@@ -1,4 +1,4 @@
-package accio;
+package accio.week1;
 // https://www.hackerrank.com/contests/interfacecse-codedash/challenges/closest-numbers
 import java.util.*;
 
