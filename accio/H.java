@@ -1,3 +1,4 @@
+package accio;
 // https://www.hackerrank.com/challenges/runningtime/problem
 import java.util.Scanner;
 

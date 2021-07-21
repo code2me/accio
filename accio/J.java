@@ -1,3 +1,4 @@
+package accio;
 // https://open.kattis.com/problems/lineup
 import java.util.*;
 

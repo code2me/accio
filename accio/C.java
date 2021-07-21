@@ -1,3 +1,4 @@
+package accio;
 //https://www.spoj.com/problems/HRECURS/
 import java.util.*;
 
