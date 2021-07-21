@@ -22,7 +22,7 @@ class RandomizedQuicksort {
             randomizedQuickSort(arr, pi + 1, high);
         }
     }
-    
+
     // This Function helps in calculating
     // random numbers between low(inclusive)
     // and high(inclusive)
@@ -31,7 +31,7 @@ class RandomizedQuicksort {
         Random rand = new Random();
         int pivot = rand.nextInt(high - low) + low;
 
-        int temp1 = arr[pivot];
+        int temp1 = arr[pivot];                                     // just swap random with high
         arr[pivot] = arr[high];
         arr[high] = temp1;
     }
