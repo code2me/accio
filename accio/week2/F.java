@@ -2,6 +2,7 @@ package accio.week2;
 
 import java.util.*;
 
+// www.hackerrank.com/challenges/insert-a-node-at-a-specific-position-in-a-linked-list/problem
 public class F {
 
     static class SinglyLinkedListNode {
@@ -36,51 +37,50 @@ public class F {
         }
     }
 
-    /*
-     * Print LinkedList public static void
-     * printSinglyLinkedList(SinglyLinkedListNode llist) { SinglyLinkedListNode
-     * currNode = llist; while (currNode != null) { System.out.print(currNode.data +
-     * " "); currNode = currNode.next; } }
-     */
+    public static void printSinglyLinkedList(SinglyLinkedListNode head) {
+        SinglyLinkedListNode currNode = head;
+        while (currNode != null) {
+            System.out.print(currNode.data + " ");
+            currNode = currNode.next;
+        }
+    }
 
-    // Recursively compare both lists
-    static int compareLists(SinglyLinkedListNode head1, SinglyLinkedListNode head2) {
-        if (head1 == null && head2 == null)
-            return 1;
-        if (head1 == null || head2 == null)
-            return 0;
-        if (head1.data == head2.data)
-            return compareLists(head1.next, head2.next);
-        return 0;
+    // my code
+    public static SinglyLinkedListNode insertNodeAtPosition(SinglyLinkedListNode head, int data, int position) {
+        SinglyLinkedListNode node = new SinglyLinkedListNode(data);
+        node.next = null;
+        node.data = data;
+
+        if (position == 0) {
+            head = node;
+        } 
+        else {
+            SinglyLinkedListNode temp = head;
+            for (int i = 0; i < position - 1; i++) {
+                temp = temp.next;
+            }
+            node.next = temp.next;
+            temp.next = node;
+        }
+        return head;
     }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int t = sc.nextInt();
-        for (int i = 0; i < t; i++) {
-            int j;
 
-            // LinkedList 1
-            SinglyLinkedList llist1 = new SinglyLinkedList();
-            int llistCount1 = sc.nextInt();
-            for (j = 0; j < llistCount1; j++) {
-
-                int llistItem1 = sc.nextInt();
-                llist1.insertNode(llistItem1);
-            }
-
-            // LinkedList 2
-            SinglyLinkedList llist2 = new SinglyLinkedList();
-            int llistCount2 = sc.nextInt();
-            for (j = 0; j < llistCount2; j++) {
-
-                int llistItem2 = sc.nextInt();
-                llist2.insertNode(llistItem2);
-            }
-
-            int result = compareLists(llist1.head, llist2.head);
-            System.out.println(result);
+        SinglyLinkedList llist = new SinglyLinkedList();
+        int llistCount = sc.nextInt();
+        for (int i = 0; i < llistCount; i++) {
+            int llistItem = sc.nextInt();
+            llist.insertNode(llistItem);
         }
+
+        int data = sc.nextInt();
+        int position = sc.nextInt();
+
+        SinglyLinkedListNode llist_head = insertNodeAtPosition(llist.head, data, position);
+        printSinglyLinkedList(llist_head);
+
         sc.close();
     }
 }

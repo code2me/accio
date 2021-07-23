@@ -40,13 +40,8 @@ public class D {
     
     public static void printSinglyLinkedList(SinglyLinkedListNode llist) {
         SinglyLinkedListNode currNode = llist;
-
-        // Traverse through the LinkedList
         while (currNode != null) {
-            // Print the data at current node
             System.out.print(currNode.data + " ");
-
-            // Go to next node
             currNode = currNode.next;
         }
     }
@@ -77,13 +72,11 @@ public class D {
     }
 
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
         SinglyLinkedList llist = new SinglyLinkedList();
-        Scanner sc = new Scanner(System.in);
         int llistCount = sc.nextInt();
-
         for (int i = 0; i < llistCount; i++) {
-
             int llistItem = sc.nextInt();
             llist.insertNode(llistItem);
         }
@@ -91,7 +84,6 @@ public class D {
         int position = sc.nextInt();
 
         SinglyLinkedListNode llist1 = deleteNode(llist.head, position);
-
         printSinglyLinkedList(llist1);
 
         sc.close();

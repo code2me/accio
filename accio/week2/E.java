@@ -2,6 +2,7 @@ package accio.week2;
 
 import java.util.*;
 
+// https://www.hackerrank.com/challenges/compare-two-linked-lists/problem
 public class E {
 
     static class SinglyLinkedListNode {
