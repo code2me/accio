@@ -46,45 +46,39 @@ public class B {
         }
     }
 
-    //my code
-    static SinglyLinkedListNode mergeLists(SinglyLinkedListNode head1, SinglyLinkedListNode head2) {
-        if (head1 == null) {
-            return head2;
-        } else if (head2 == null) {
-            return head1;
-        }
-
-        /* Find new head pointer */
-        SinglyLinkedListNode head = null;
-        if (head1.data < head2.data) {
-            head = head1;
-            head1 = head1.next;
-        } else {
-            head = head2;
-            head2 = head2.next;
-        }
-
-        /* Build rest of list */
-        SinglyLinkedListNode n = head;
-        while (head1 != null && head2 != null) {
-            if (head1.data < head2.data) {
-                n.next = head1;
-                head1 = head1.next;
+    // my code
+    static SinglyLinkedListNode mergeLists(SinglyLinkedListNode h1, SinglyLinkedListNode h2) {
+        SinglyLinkedListNode newHead = null;
+        SinglyLinkedListNode temp = null;
+        while (h1 != null && h2 != null) {
+            if (h1.data < h2.data) {
+                if (newHead == null) {
+                    newHead = h1;
+                    temp = h1;
+                } else {
+                    temp.next = h1;
+                    temp = h1;
+                }
+                h1 = h1.next;
             } else {
-                n.next = head2;
-                head2 = head2.next;
+                if (newHead == null) {
+                    newHead = h2;
+                    temp = h2;
+                } else {
+                    temp.next = h2;
+                    temp = h2;
+                }
+                h2 = h2.next;
             }
-            n = n.next;
         }
 
-        /* Attach the remaining elements */
-        if (head1 == null) {
-            n.next = head2;
+        if (h1 == null) {
+            temp.next = h2;
         } else {
-            n.next = head1;
+            temp.next = h1;
         }
 
-        return head;
+        return newHead;
     }
 
     private static final Scanner scanner = new Scanner(System.in);
@@ -95,7 +89,7 @@ public class B {
 
         for (int testsItr = 0; testsItr < tests; testsItr++) {
 
-            //LinkedList 1
+            // LinkedList 1
             SinglyLinkedList llist1 = new SinglyLinkedList();
             int llist1Count = scanner.nextInt();
 
