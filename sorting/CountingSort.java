@@ -1,6 +1,6 @@
 package sorting;
 
 public class CountingSort {
-    //counting sort
+    //counting sort algo
     
 }
