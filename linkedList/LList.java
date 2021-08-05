@@ -16,19 +16,19 @@ public class LList {
         }
     }
 
-    public static void printList(Node head) {
-        while (head != null) {
-            System.out.print(head.data + " ");
-            head = head.next;
-        }
-    }
+    // public static void printList(Node head) {
+    //     while (head != null) {
+    //         System.out.print(head.data + " ");
+    //         head = head.next;
+    //     }
+    // }
 
     public static void main(String[] args) {
         LList llist = new LList();
 
         // Assign data 
-        llist.head = new Node(1);
-        Node second = new Node(2);
+        llist.head = new Node(2);
+        Node second = new Node(4);
         Node third = new Node(3);
 
         // Connect nodes
@@ -36,6 +36,23 @@ public class LList {
         second.next = third;
 
         // printing node-data
-        printList(llist.head);
+        addNum(llist.head);
+        System.out.println(num);
+    }
+
+    static int count = 0, num = 0;
+
+    public static int addNum(Node head) {
+        if (head == null) {
+            return 0;
+        }
+
+        num += head.data * Math.pow(10, count);
+        head = head.next;
+        count++;
+        
+        addNum(head);
+
+        return num;
     }
 }
