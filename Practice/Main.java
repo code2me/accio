@@ -2,20 +2,66 @@ package Practice;
 
 import java.util.*;
 
+class Node {
+	Node left;
+	Node right;
+	int data;
+
+	Node(int data) {
+		this.data = data;
+		left = null;
+		right = null;
+	}
+}
+
 class Main {
 
-	static void findSubset(int arr[], int n, int k) {
-		
+	void top_view(Node root) {
+		left_view(root.left);
+		System.out.print(root.data + " ");
+		right_view(root.right);
 	}
-	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		int N = scanner.nextInt();
-		int K = scanner.nextInt();
-		int arr[] = new int[N];
-		for (int i = 0; i < N; i++) {
-			arr[i] = scanner.nextInt();
+
+	void left_view(Node root) {
+		if (root == null)
+			return;
+		left_view(root.left);
+		System.out.print(root.data + " ");
+	}
+
+	void right_view(Node root) {
+		if (root == null)
+			return;
+		System.out.print(root.data + " ");
+		right_view(root.right);
+	}
+
+	public static Node insert(Node root, int data) {
+		if (root == null) {
+			return new Node(data);
+		} else {
+			Node cur;
+			if (data <= root.data) {
+				cur = insert(root.left, data);
+				root.left = cur;
+			} else {
+				cur = insert(root.right, data);
+				root.right = cur;
+			}
+			return root;
 		}
-		scanner.close();
-		findSubset(arr, N, K);
+	}
+
+	public static void main(String[] args) {
+		Main m = new Main();
+		Scanner scan = new Scanner(System.in);
+		int t = scan.nextInt();
+		Node root = null;
+		while (t-- > 0) {
+			int data = scan.nextInt();
+			root = insert(root, data);
+		}
+		scan.close();
+		m.top_view(root);
 	}
 }

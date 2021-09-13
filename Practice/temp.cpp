@@ -67,3 +67,5 @@ int numOfSubsets(int arr[], int n,
     // return count
     return count;
 }
+
+
